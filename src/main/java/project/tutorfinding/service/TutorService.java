@@ -1,5 +1,6 @@
 package project.tutorfinding.service;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import project.tutorfinding.domain.Tutor;
 import project.tutorfinding.domain.User;
 
@@ -8,8 +9,8 @@ import java.util.List;
 
 
 
-public interface TutorService {
-    void save(Tutor tutor);
+public interface TutorService extends JpaRepository<Tutor,Integer>{
+    Tutor save(Tutor tutor);
 
     List<Tutor> findBySpeciality(String specialityCode);
 

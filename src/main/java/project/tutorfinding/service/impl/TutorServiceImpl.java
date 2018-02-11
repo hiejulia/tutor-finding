@@ -15,7 +15,7 @@ import project.tutorfinding.service.UserService;
 
 @Service("tutorServiceImpl")
 @Transactional
-public class TutorServiceImpl implements TutorService {
+public abstract class TutorServiceImpl implements TutorService {
     @Autowired
     private TutorDao tutorDAO;
 
@@ -23,8 +23,9 @@ public class TutorServiceImpl implements TutorService {
     private UserService userService;
 
     @Override
-    public void save(Tutor tutor) {
-
+    public Tutor save(Tutor tutor) {
+        tutorDAO.save(tutor);
+        return tutor;
     }
 
     @Override

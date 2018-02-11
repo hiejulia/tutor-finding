@@ -15,36 +15,42 @@ import project.tutorfinding.repository.TutorDao;
 @Repository
 @Transactional
 public class TutorImpl implements TutorDao {
-    private SessionFactory sessionFactory;
+//    private SessionFactory sessionFactory;
+
+//    @Autowired
+//    public TutorImpl(SessionFactory sessionFactory) {
+//        this.sessionFactory = sessionFactory;
+//    }
 
     @Autowired
-    public DoctorDAOImpl(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }
+    private TutorDao tutorDao;
 
     @Override
     public List<Tutor> findAll() {
-        Session session = this.sessionFactory.getCurrentSession();
-        TypedQuery<Tutor> query = (TypedQuery<Tutor>) session.getNamedQuery("findAll");
-        List<Tutor> tutors = query.getResultList();
-        return tutors;
+//        Session session = this.sessionFactory.getCurrentSession();
+//        TypedQuery<Tutor> query = (TypedQuery<Tutor>) session.getNamedQuery("findAll");
+//        List<Tutor> tutors = query.getResultList();
+//        return tutors;
+        return tutorDao.findAll();
     }
 
     @Override
     public List<Tutor> findBySpecialityCode(String code) {
-        Session session = this.sessionFactory.getCurrentSession();
-        TypedQuery<Tutor> query = (TypedQuery<Tutor>)session.getNamedQuery("findBySpeciality");
-        query.setParameter("specialityCode", code);
-        List<Tutor> tutors = query.getResultList();
-        return tutors;
+//        Session session = this.sessionFactory.getCurrentSession();
+//        TypedQuery<Tutor> query = (TypedQuery<Tutor>)session.getNamedQuery("findBySpeciality");
+//        query.setParameter("specialityCode", code);
+//        List<Tutor> tutors = query.getResultList();
+//        return tutors;
+        return tutorDao.findBySpecialityCode(code);
     }
 
     @Override
     public int findAllCount() {
-        Session session = this.sessionFactory.getCurrentSession();
-        TypedQuery<Number> query = (TypedQuery<Tutor>)session.getNamedQuery("findAllCount");
-        int count = ((Number)query.getSingleResult()).intValue();
-        return count;
+//        Session session = this.sessionFactory.getCurrentSession();
+//        TypedQuery<Number> query = (TypedQuery<Tutor>)session.getNamedQuery("findAllCount");
+//        int count = ((Number)query.getSingleResult()).intValue();
+//        return count;
+        return tutorDao.findAllCount();
     }
 
     @Override
@@ -59,19 +65,21 @@ public class TutorImpl implements TutorDao {
 
     @Override
     public Tutor findByUserId(int userId) {
-        Session session = this.sessionFactory.getCurrentSession();
-        TypedQuery<Tutor> query = (TypedQuery<Tutor>)session.getNamedQuery("findById");
-        query.setParameter("id", userId);
-        List<Tutor> doctors = query.getResultList();
-        return doctors.get(0);
+//        Session session = this.sessionFactory.getCurrentSession();
+//        TypedQuery<Tutor> query = (TypedQuery<Tutor>)session.getNamedQuery("findById");
+//        query.setParameter("id", userId);
+//        List<Tutor> doctors = query.getResultList();
+//        return doctors.get(0);
+        return tutorDao.findByUserId(userId);
 
     }
 
     @Override
     public Tutor save(Tutor tutor) {
-        Session session = this.sessionFactory.openSession();
-        session.save(tutor);
-        session.close();
-        return tutor;
+//        Session session = this.sessionFactory.openSession();
+//        session.save(tutor);
+//        session.close();
+//        return tutor;
+        return tutorDao.save(tutor);
     }
 }

@@ -61,7 +61,7 @@ public class UserAccountController {
         // check if user exist
         try{
             user = userService.doesUserExist(user.getEmail());
-        }catch(UserNotFoundException e){
+        }catch(Exception e){
 
 //            throw UserNotFoundException("User not found exception");
         }
@@ -127,7 +127,7 @@ public class UserAccountController {
         User user = null;
         try {
             user = userService.doesUserExist(email);
-        } catch (UserNotFoundException e) {
+        } catch ( Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }

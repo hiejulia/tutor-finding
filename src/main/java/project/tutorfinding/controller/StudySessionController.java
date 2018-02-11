@@ -11,10 +11,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import project.tutorfinding.domain.StudySession;
 import project.tutorfinding.domain.Tutor;
 import project.tutorfinding.domain.User;
@@ -101,7 +98,7 @@ public class StudySessionController {
         User user = null;
         try {
             user = userService.doesUserExist(userEmailAddress);
-        } catch (UserNotFoundException e) {
+        } catch (Exception e ) {
         }
         return user;
     }

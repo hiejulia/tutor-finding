@@ -153,10 +153,7 @@ CREATE TABLE `tutor_class` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `last_updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
---   KEY `doctor_location_id_fk` (`doctor_id`),
---   KEY `address_id_fk` (`address_id`),
---   CONSTRAINT `address_id_fk` FOREIGN KEY (`address_id`) REFERENCES `health_centre` (`id`),
---   CONSTRAINT `doctor_location_id_fk` FOREIGN KEY (`doctor_id`) REFERENCES `doctor` (`id`)
+
   KEY `tutor_class_id_fk` (`tutor_id`),
   KEY `department_id_fk` (`department_id`),
   CONSTRAINT `department_id_fk` FOREIGN KEY (`department_id`) REFERENCES `department` (`id`),
@@ -169,7 +166,7 @@ CREATE TABLE `tutor_class` (
 -- Dumping data for table `tutor_class`
 --
 
-LOCK TABLES `doctor_location` WRITE;
+LOCK TABLES `tutor_location` WRITE;
 
 UNLOCK TABLES;
 
@@ -199,7 +196,7 @@ CREATE TABLE `tutor_qualification` (
 -- Dumping data for table `tutor_qualification`
 --
 
-LOCK TABLES `doctor_qualification` WRITE;
+LOCK TABLES `tutor_qualification` WRITE;
 
 UNLOCK TABLES;
 

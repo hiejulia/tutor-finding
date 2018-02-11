@@ -20,7 +20,7 @@ public class StudySessionImpl implements StudySessionDao {
     private SessionFactory sessionFactory;
 
     @Autowired
-    public RxDAOImpl(SessionFactory sessionFactory) {
+    public StudySessionImpl(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 

@@ -18,24 +18,24 @@ import javax.persistence.Table;
 
 @Entity(name = "tutor")
 @Table(name = "tutor")
-@NamedQueries({
-        @NamedQuery(
-                name = "findBySpeciality",
-                query = "select t from Tutor t where t.specialityCode = :specialityCode"
-        ),
-        @NamedQuery(
-                name = "findAll",
-                query = "select * from Tutor t"
-        ),
-        @NamedQuery(
-                name = "findAllCount",
-                query = "select count(t) from Tutor t"
-        ),
-        @NamedQuery(
-                name = "findById",
-                query = "select t from Tutor t where t.user.id = :id"
-        ),
-})
+//@NamedQueries({
+//        @NamedQuery(
+//                name = "findBySpeciality",
+//                query = "select t from Tutor t where t.specialityCode = :specialityCode"
+//        ),
+//        @NamedQuery(
+//                name = "findAll",
+//                query = "select * from Tutor t"
+//        ),
+//        @NamedQuery(
+//                name = "findAllCount",
+//                query = "select count(t) from Tutor t"
+//        ),
+//        @NamedQuery(
+//                name = "findById",
+//                query = "select t from Tutor t where t.user.id = :id"
+//        ),
+//})
 public class Tutor implements Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -1,10 +1,12 @@
 package project.tutorfinding.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 import project.tutorfinding.domain.User;
 
 import java.util.List;
 
-public interface UserDao {
+public interface UserDao extends JpaRepository<User, Integer> {
     // create new user
     User save(User user);
 
@@ -17,7 +19,6 @@ public interface UserDao {
     // update user
     void update(User user);
 
-    // delete user - for admin only
-    void delete(User user);
+
 
 }

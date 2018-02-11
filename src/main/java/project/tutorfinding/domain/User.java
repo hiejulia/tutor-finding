@@ -14,17 +14,17 @@ import javax.validation.constraints.NotNull;
 
 @Entity(name = "user")
 @Table(name="user")
-@NamedQueries({
-        @NamedQuery(
-                name = "findByEmail",
-                query = "select u from User u where u.email = :email"
-        ),
-        @NamedQuery(
-                name = "findByEmailAndPassword",
-                query = "SELECT u as u FROM User u where u.email= :email and u.password = :password"
-
-        )
-})
+//@NamedQueries({
+//        @NamedQuery(
+//                name = "findByEmail",
+//                query = "select u from User u where u.email = :email"
+//        ),
+//        @NamedQuery(
+//                name = "findByEmailAndPassword",
+//                query = "SELECT u as u FROM User u where u.email= :email and u.password = :password"
+//
+//        )
+//})
 public class User {
 
     @Id

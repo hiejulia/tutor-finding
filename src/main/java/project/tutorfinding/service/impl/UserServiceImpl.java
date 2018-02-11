@@ -1,6 +1,7 @@
 package project.tutorfinding.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,12 +17,11 @@ import project.tutorfinding.service.UserService;
 public class UserServiceImpl implements UserService {
 
     // autowired userrepository
-    private UserDao userDAO;
+
 
     @Autowired
-    public UserServiceImpl(UserDao userDAO) {
-        this.userDAO = userDAO;
-    }
+    @Qualifier("userDao")
+    private UserDao userDAO;
 
     @Override
     public User save(User user) {
@@ -34,10 +34,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User doesUserExist(String email) throws UserNotFoundException {
+    public User doesUserExist(String email)  {
         User user = userDAO.findByEmail(email);
         if(user == null){
-            throw new UserNotFoundException("User does not exist in the database");
+//            throw new UserNotFoundException("User does not exist in the database");
         }
         return user;
     }
