@@ -16,11 +16,11 @@ import javax.validation.constraints.NotNull;
 @Table(name="user")
 @NamedQueries({
         @NamedQuery(
-                name = "User.findByEmail",
-                query = "select u as u from User u where u.email = :email"
+                name = "findByEmail",
+                query = "select u from User u where u.email = :email"
         ),
         @NamedQuery(
-                name = "User.findByEmailAndPassword",
+                name = "findByEmailAndPassword",
                 query = "SELECT u as u FROM User u where u.email= :email and u.password = :password"
 
         )

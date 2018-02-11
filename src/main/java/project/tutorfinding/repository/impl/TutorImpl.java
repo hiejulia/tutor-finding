@@ -25,7 +25,7 @@ public class TutorImpl implements TutorDao {
     @Override
     public List<Tutor> findAll() {
         Session session = this.sessionFactory.getCurrentSession();
-        TypedQuery<Tutor> query = session.getNamedQuery("Tutor.findAll");
+        TypedQuery<Tutor> query = (TypedQuery<Tutor>) session.getNamedQuery("findAll");
         List<Tutor> tutors = query.getResultList();
         return tutors;
     }
@@ -33,7 +33,7 @@ public class TutorImpl implements TutorDao {
     @Override
     public List<Tutor> findBySpecialityCode(String code) {
         Session session = this.sessionFactory.getCurrentSession();
-        TypedQuery<Tutor> query = session.getNamedQuery("Tutor.findBySpeciality");
+        TypedQuery<Tutor> query = (TypedQuery<Tutor>)session.getNamedQuery("findBySpeciality");
         query.setParameter("specialityCode", code);
         List<Tutor> tutors = query.getResultList();
         return tutors;
@@ -42,7 +42,7 @@ public class TutorImpl implements TutorDao {
     @Override
     public int findAllCount() {
         Session session = this.sessionFactory.getCurrentSession();
-        TypedQuery<Number> query = session.getNamedQuery("Tutor.findAllCount");
+        TypedQuery<Number> query = (TypedQuery<Tutor>)session.getNamedQuery("findAllCount");
         int count = ((Number)query.getSingleResult()).intValue();
         return count;
     }
@@ -60,7 +60,7 @@ public class TutorImpl implements TutorDao {
     @Override
     public Tutor findByUserId(int userId) {
         Session session = this.sessionFactory.getCurrentSession();
-        TypedQuery<Tutor> query = session.getNamedQuery("Tutor.findById");
+        TypedQuery<Tutor> query = (TypedQuery<Tutor>)session.getNamedQuery("findById");
         query.setParameter("id", userId);
         List<Tutor> doctors = query.getResultList();
         return doctors.get(0);

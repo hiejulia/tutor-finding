@@ -31,7 +31,7 @@ public class UserImpl implements UserDao {
     @Override
     public User findByEmail(String email) {
         Session session = this.sessionFactory.getCurrentSession();
-        TypedQuery<User> query = session.getNamedQuery("User.findByEmail");
+        TypedQuery<User> query = (TypedQuery<User>)session.getNamedQuery("findByEmail");
         query.setParameter("email",email);
         return query.getResultList();
 
@@ -42,7 +42,7 @@ public class UserImpl implements UserDao {
     @Override
     public List<User> findByEmailAndPassword(String email, String password) {
         Session session = this.sessionFactory.getCurrentSession();
-        TypedQuery<User> query = session.getNamedQuery("User.findByEmailAndPassword");
+        TypedQuery<User> query =(TypedQuery<User>) session.getNamedQuery("findByEmailAndPassword");
         query.setParameter("email", email);
         query.setParameter("password", password);
         return query.getResultList();

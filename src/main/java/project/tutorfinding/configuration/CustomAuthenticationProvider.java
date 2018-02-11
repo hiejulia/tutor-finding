@@ -20,6 +20,7 @@ import org.springframework.stereotype.Component;
 
 import org.springframework.stereotype.Component;
 import project.tutorfinding.domain.User;
+import project.tutorfinding.exception.UserNotFoundException;
 import project.tutorfinding.service.UserService;
 
 @Component
@@ -38,11 +39,11 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         final String username = authentication.getName();
         final String password = authentication.getCredentials().toString();
 
-        User user = null;
+        User user = new User();
         try {
             user = userService.doesUserExist(username);
         } catch (UsernameNotFoundException e) {
-            throw new UsernameNotFoundException("Not found");
+//            throw new UsernameNotFoundException("Not found");
 
         }
         // IF USER NAME IS NOT FOUND

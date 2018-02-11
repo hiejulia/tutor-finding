@@ -35,7 +35,7 @@ public class StudySessionImpl implements StudySessionDao {
     @Override
     public List<StudySession> findByUserId(int id) {
         Session session = this.sessionFactory.getCurrentSession();
-        TypedQuery<StudySession> query = session.getNamedQuery("findByUserId");
+        TypedQuery<StudySession> query = (TypedQuery<StudySession>) session.getNamedQuery("findByUserId");
         query.setParameter("id", id);
         List<StudySession> rxList = query.getResultList();
         return rxList;
@@ -44,7 +44,7 @@ public class StudySessionImpl implements StudySessionDao {
     @Override
     public List<StudySession> findByTutorId(int id) {
         Session session = this.sessionFactory.getCurrentSession();
-        TypedQuery<StudySession> query = session.getNamedQuery("findByTutorId");
+        TypedQuery<StudySession> query = (TypedQuery<StudySession>)session.getNamedQuery("findByTutorId");
         query.setParameter("id", id);
         List<StudySession> rxList = query.getResultList();
         return rxList;

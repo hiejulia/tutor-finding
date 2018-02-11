@@ -20,19 +20,19 @@ import javax.persistence.Table;
 @Table(name = "tutor")
 @NamedQueries({
         @NamedQuery(
-                name = "Tutor.findBySpeciality",
+                name = "findBySpeciality",
                 query = "select t from Tutor t where t.specialityCode = :specialityCode"
         ),
         @NamedQuery(
-                name = "Tutor.findAll",
-                query = "select * from Tutor"
+                name = "findAll",
+                query = "select * from Tutor t"
         ),
         @NamedQuery(
-                name = "Tutor.findAllCount",
+                name = "findAllCount",
                 query = "select count(t) from Tutor t"
         ),
         @NamedQuery(
-                name = "Tutor.findById",
+                name = "findById",
                 query = "select t from Tutor t where t.user.id = :id"
         ),
 })

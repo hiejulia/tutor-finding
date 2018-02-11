@@ -11,7 +11,7 @@ public interface UserService {
 
     void update(User user);
 
-    User doesUserExist(String email) throws UserNotFoundException;
+    User doesUserExist(String email) ;
 
     User getByEmail(String email) throws UserNotFoundException;
 
