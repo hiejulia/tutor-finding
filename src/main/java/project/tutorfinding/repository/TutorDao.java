@@ -1,11 +1,14 @@
 package project.tutorfinding.repository;
+
+import project.tutorfinding.domain.Tutor;
+
 import java.util.List;
 
-public interface Tutor {
+public interface TutorDao {
 
     List<Tutor> findAll();
 
-    List<Tutor> findBySpecialityCode();
+    List<Tutor> findBySpecialityCode(String code);
 
     int findAllCount();
 

@@ -9,11 +9,12 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import project.tutorfinding.repository.Tutor;
+import project.tutorfinding.domain.Tutor;
+import project.tutorfinding.repository.TutorDao;
 
 @Repository
 @Transactional
-public class TutorImpl implements Tutor {
+public class TutorImpl implements TutorDao {
     private SessionFactory sessionFactory;
 
     @Autowired

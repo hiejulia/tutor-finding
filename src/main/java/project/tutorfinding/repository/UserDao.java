@@ -1,7 +1,10 @@
 package project.tutorfinding.repository;
+
+import project.tutorfinding.domain.User;
+
 import java.util.List;
 
-public interface User {
+public interface UserDao {
     // create new user
     User save(User user);
 
